@@ -1,5 +1,7 @@
-#include <string>
-#include <iostream>
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
+# include <string>
+# include <iostream>
 
 class AWeapon {
 
@@ -14,8 +16,10 @@ class AWeapon {
 		int				getDamage() const;
 		virtual void	attack() const = 0;
 
-	private:
+	protected:
 		std::string		_name;
 		int				_APCost;
 		int				_damage;
 };
+
+#endif
