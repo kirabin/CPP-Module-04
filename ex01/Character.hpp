@@ -29,6 +29,6 @@ class Character {
 
 };
 
-std::ostream&	operator <<(std::ostream out, Character& character);
+std::ostream&	operator <<(std::ostream& out, const Character& character);
 
 #endif

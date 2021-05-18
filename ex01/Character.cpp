@@ -7,15 +7,19 @@ Character::Character(std::string const & name) {
 }
 
 Character::Character(const Character& other) {
-	// Copy the other instance
+	this->_name = other._name;
+	this->_weapon = other._weapon;
+	this->_action_points = other._action_points;
+	this->_max_action_points = other._max_action_points;
 }
 
-Character::~Character() {
-
-}
+Character::~Character() {}
 
 Character&	Character::operator =(const Character& other) {
-	// Copy the other instance
+	this->_name = other._name;
+	this->_weapon = other._weapon;
+	this->_action_points = other._action_points;
+	this->_max_action_points = other._max_action_points;
 	return *this;
 }
 
@@ -60,8 +64,13 @@ AWeapon*		Character::getWeapon() const {
 	return this->_weapon;
 }
 
-std::ostream&	operator <<(std::ostream out, Character& character) {
-	std::cout << character.getName() << std::endl;
-	std::cout << character.getWeapon() << std::endl;
-	sdt::cout << character.getAP() << std::endl;
+std::ostream&	operator <<(std::ostream& out, const Character& character) {
+	std::cout << character.getName() << " has ";
+	std::cout << character.getAP() << " AP and " ;
+	if (character.getWeapon()) {
+		std::cout << "wields a " << character.getWeapon()->name << std::endl;
+	} else {
+		std::cout << "is unarmed" << std::endl;
+	}
+	return out;
 }

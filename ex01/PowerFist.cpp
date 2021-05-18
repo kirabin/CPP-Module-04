@@ -1,6 +1,6 @@
 #include "PowerFist.hpp"
 
-PowerFist::PowerFist() : AWeapon("Power Fist", 50, 8) {}
+PowerFist::PowerFist() : AWeapon("Power Fist", 8, 50) {}
 
 PowerFist::PowerFist(const PowerFist& other) : AWeapon(other.name, other._APCost, other._damage) {}
 
