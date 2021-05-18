@@ -22,11 +22,17 @@ int			Enemy::getHP() const {
 	return this->_hitPoints;
 }
 
+std::string	Enemy::getType() const {
+	return this->_type;
+}
+
 void		Enemy::takeDamage(int damage) {
 	if (damage < 0)
 		return ;
-	else if (damage >= this->_hitPoints)
+	else if (damage >= this->_hitPoints) {
 		this->_hitPoints = 0;
+		delete this;
+	}
 	else
 		this->_hitPoints -= damage;
 }

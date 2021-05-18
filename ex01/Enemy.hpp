@@ -13,6 +13,7 @@ class Enemy {
 		Enemy&	operator =(const Enemy& other);
 
 		int				getHP() const;
+		std::string		getType() const;
 		virtual void	takeDamage(int damage);
 
 	protected:
