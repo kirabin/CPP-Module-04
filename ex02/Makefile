@@ -1,6 +1,6 @@
 NAME	=	a.out
 COMPILER=	clang++
-FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror -g
 SRC		=	Squad.cpp TacticalMarine.cpp AssaultTerminator.cpp main.cpp
 INC		=	Squad.hpp TacticalMarine.hpp AssaultTerminator.hpp ISpaceMarine.hpp ISquad.hpp
 OBJ		=	$(SRC:.cpp=.o)
@@ -10,7 +10,7 @@ all: $(NAME)
 %.o: %.cpp $(INC)
 	$(COMPILER) $(FLAGS) -o $@ -c $<
 
-$(NAME):  $(OBJ)
+$(NAME): $(OBJ)
 	$(COMPILER) $(FLAGS) -o $(NAME) $(OBJ)
 
 clean:
