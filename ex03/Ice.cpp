@@ -21,15 +21,15 @@ Ice&	Ice::operator =(const Ice& other) {
 	return *this;
 }
 
-AMateria* Ice::clone() const {
-	Ice* copy = new Ice;
+AMateria*	Ice::clone() const {
+	Ice* copy = new Ice();
 
 	copy->_type = this->_type;
 	copy->_xp = this->_xp;
 	return copy;
 }
 
-void Ice::use(ICharacter& target) {
+void		Ice::use(ICharacter& target) {
 	AMateria::use(target);
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

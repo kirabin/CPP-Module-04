@@ -13,7 +13,7 @@ class AMateria {
 		std::string		_type;
 
 	public:
-		AMateria(std::string const & type);
+		AMateria(const std::string& type);
 		virtual ~AMateria();
 
 		const std::string& getType() const;

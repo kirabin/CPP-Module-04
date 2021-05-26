@@ -51,7 +51,7 @@ void Character::equip(AMateria* m) {
 }
 
 void Character::unequip(int idx) {
-	if (0 <= idx && idx < _max_slots) {
+	if (0 <= idx && idx < _slots_count) {
 		for (int i = idx; i < _max_slots - 1; i++) {
 			_materia_slots[i] = _materia_slots[i + 1];
 		}

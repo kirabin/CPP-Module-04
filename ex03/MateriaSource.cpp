@@ -30,14 +30,11 @@ MateriaSource&	MateriaSource::operator =(const MateriaSource& other) {
 
 
 void			MateriaSource::learnMateria(AMateria* m) {
-	AMateria* m_copy = m;
-	// TODO: check whether copy got created;
-
 	if (m) {
 		if (_slots_count == _max_slots) {
 			std::cout << "Materia slots are full" << std::endl;
 		} else {
-			_materia_slots[_slots_count - 1] = m_copy;
+			_materia_slots[_slots_count - 1] = m;
 			_slots_count++;
 		}
 	} else {
@@ -46,13 +43,11 @@ void			MateriaSource::learnMateria(AMateria* m) {
 }
 
 AMateria*		MateriaSource::createMateria(const std::string& type) {
-	if (type == "ice") {
-		Ice* ice = new Ice(this->_materia_slots[_slots_count - 1]);
-		return ice;
-	} else if (type == "cure") {
-		Cure* cure = new Cure(this->_materia_slots[_slots_count - 1]);
-		return cure;
-	} else {
-		return NULL;
+
+	for (int i = 0; i < _slots_count; i++) {
+		if (this->_materia_slots[i]->getType() == type) {
+			return this->_materia_slots[i]->clone();
+		}
 	}
+	return NULL;
 }
