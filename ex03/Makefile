@@ -1,6 +1,6 @@
 NAME	=	a.out
 COMPILER=	clang++
-FLAGS	=	-Wall -Wextra -Werror
+FLAGS	=	-Wall -Wextra -Werror -g
 SRC		=	AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp
 INC		=	AMateria.hpp Character.hpp Cure.hpp ICharacter.hpp IMateriaSource.hpp Ice.hpp MateriaSource.hpp
 OBJ		=	$(SRC:.cpp=.o)

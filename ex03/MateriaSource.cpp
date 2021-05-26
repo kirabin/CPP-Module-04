@@ -3,7 +3,7 @@
 MateriaSource::MateriaSource() {
 	this->_slots_count = 0;
 	for (int i = 0; i < _max_slots; i++) {
-		delete this->_materia_slots[i];
+		this->_materia_slots[i] = NULL;
 	}
 }
 
@@ -34,7 +34,7 @@ void			MateriaSource::learnMateria(AMateria* m) {
 		if (_slots_count == _max_slots) {
 			std::cout << "Materia slots are full" << std::endl;
 		} else {
-			_materia_slots[_slots_count - 1] = m;
+			_materia_slots[_slots_count] = m;
 			_slots_count++;
 		}
 	} else {

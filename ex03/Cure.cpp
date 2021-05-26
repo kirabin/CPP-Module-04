@@ -1,12 +1,12 @@
 #include "Cure.hpp"
 
-Cure::Cure() : AMateria("Cure") {}
+Cure::Cure() : AMateria("cure") {}
 
-Cure::Cure(const Cure& other) : AMateria("Cure") {
+Cure::Cure(const Cure& other) : AMateria("cure") {
 	*this = other;
 }
 
-Cure::Cure(const AMateria* other) : AMateria("Cure") {
+Cure::Cure(const AMateria* other) : AMateria("cure") {
 	this->_type = other->getType();
 	this->_xp = other->getXP();
 }
