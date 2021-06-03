@@ -8,6 +8,8 @@ Squad::Squad() {
 }
 
 Squad::Squad(const Squad& other) {
+	this->_units = NULL;
+	this->_count = 0;
 	*this = other;
 }
 
@@ -19,13 +21,16 @@ Squad::~Squad() {
 }
 
 Squad&	Squad::operator =(const Squad& other) {
+	for (int i = 0; i < this->_count; i++) {
+		delete this->_units[i];
+	}
 	delete [] this->_units;
 
 	this->_units = new ISpaceMarine* [other._count];
-	for (int i = 0; i < this->_count; i++) {
-		this->_units[i] = other._units[i];
-	}
 	this->_count = other._count;
+	for (int i = 0; i < this->_count; i++) {
+		this->_units[i] = other._units[i]->clone();
+	}
 	return *this;
 }
 

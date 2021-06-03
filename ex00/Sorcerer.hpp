@@ -10,7 +10,7 @@ class Sorcerer {
 	public:
 		Sorcerer(std::string name, std::string title);
 		Sorcerer(const Sorcerer& other);
-		~Sorcerer();
+		virtual ~Sorcerer();
 
 		Sorcerer&		operator =(const Sorcerer& other);
 		std::string		getName() const ;
@@ -18,6 +18,7 @@ class Sorcerer {
 		void			polymorph(const Victim& victim) const;
 
 	private:
+		Sorcerer();
 		std::string	_name;
 		std::string	_title;
 };

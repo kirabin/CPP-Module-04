@@ -9,11 +9,11 @@ class Victim {
 	public:
 		Victim(std::string name);
 		Victim(const Victim& other);
-		~Victim();
+		virtual ~Victim();
 
 		Victim&			operator =(const Victim& other);
 		std::string		getName() const;
-		virtual void	getPolymorphed() const; //TODO: virtual member functions in-depth
+		virtual void	getPolymorphed() const;
 
 	protected:
 		std::string		_name;

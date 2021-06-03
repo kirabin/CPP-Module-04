@@ -8,7 +8,7 @@ class Squad : public ISquad {
 	public:
 		Squad();
 		Squad(const Squad& other);
-		~Squad();
+		virtual ~Squad();
 
 		Squad&			operator =(const Squad& other);
 		int				getCount() const;

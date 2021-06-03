@@ -11,7 +11,7 @@ class Character {
 	public:
 		Character(std::string const & name);
 		Character(const Character& other);
-		~Character();
+		virtual ~Character();
 		void recoverAP();
 		void equip(AWeapon* weapon);
 		void attack(Enemy* enemy);

@@ -1,13 +1,14 @@
 #ifndef TacticalMarine_hpp
 # define TacticalMarine_hpp
 # include "ISpaceMarine.hpp"
+# include <string>
 
 class TacticalMarine : public ISpaceMarine {
 
 	public:
 		TacticalMarine();
 		TacticalMarine(const TacticalMarine& other);
-		~TacticalMarine();
+		virtual ~TacticalMarine();
 
 		TacticalMarine&	operator =(const TacticalMarine& other);
 
@@ -15,6 +16,9 @@ class TacticalMarine : public ISpaceMarine {
 		void			battleCry() const;
 		void			rangedAttack() const;
 		void			meleeAttack() const;
+
+	private:
+		std::string _name;
 };
 
 #endif

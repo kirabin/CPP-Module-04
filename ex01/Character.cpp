@@ -4,6 +4,7 @@ Character::Character(std::string const & name) {
 	this->_name = name;
 	this->_weapon = NULL;
 	this->_action_points = 40;
+	this->_max_action_points = 40;
 }
 
 Character::Character(const Character& other) {

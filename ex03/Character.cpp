@@ -27,7 +27,7 @@ Character&	Character::operator =(const Character& other) {
 	this->_name = other._name;
 	this->_slots_count = other._slots_count;
 	for (int i = 0; i < this->_slots_count; i++) {
-		this->_materia_slots[i] = other._materia_slots[i];
+		this->_materia_slots[i] = other._materia_slots[i]->clone();
 	}
 	return *this;
 }
@@ -37,7 +37,6 @@ const std::string& Character::getName() const {
 }
 
 void Character::equip(AMateria* m) {
-	// TODO: check for uniqueness?
 	if (m) {
 		if (_slots_count == _max_slots) {
 			std::cout << "Materia slots are full" << std::endl;

@@ -20,5 +20,5 @@ void AMateria::use(ICharacter& target) {
 		this->_xp = UINT32_MAX;
 	else
 		this->_xp += 10;
-	target.getName(); // TODO: do something with target?
+	target.getName();
 }

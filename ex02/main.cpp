@@ -4,7 +4,6 @@
 #include <string>
 #include <iostream>
 
-// TODO: expand tests
 int main()
 {
 		ISpaceMarine* bob = new TacticalMarine;
@@ -19,5 +18,14 @@ int main()
 			cur->meleeAttack();
 		}
 		delete vlc;
+
+		std::cout << std::endl;
+
+		Squad a;
+		ISpaceMarine* tm = new TacticalMarine;
+		ISpaceMarine* at = new AssaultTerminator;
+		a.push(tm);
+		a.push(at);
+		Squad b = a;
 		return 0;
 }
