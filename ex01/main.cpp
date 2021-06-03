@@ -19,7 +19,6 @@ int main()
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
 	AWeapon* hf = new HeavyFeet();
-	me->equip(pr);
 	std::cout << *me;
 	me->equip(pf);
 	me->attack(b);
@@ -36,5 +35,11 @@ int main()
 	std::cout << *me;
 	me->attack(robot);
 	std::cout << *me;
+	delete pr;
+	delete pf;
+	delete hf;
+	delete robot;
+	delete super;
+	delete me;
 	return 0;
 }
